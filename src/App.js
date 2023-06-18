@@ -4,8 +4,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import About from './components/About';
-import { Route, Routes } from "react-router-dom";
+// import About from './components/About';
+// import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode,setMode] = useState('light'); //whether dark mode is enabled
@@ -41,11 +41,11 @@ function App() {
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/> 
       <Alert alert={alert}/>
       <div className="container my-3">
-      {/* <TextForm heading="TextAnalyzer" showAlert={showAlert} mode={mode}/> */}
-        <Routes>
-          <Route exact path='/' element={<TextForm heading="TextAnalyzer" showAlert={showAlert} mode={mode}/>}/> 
-          <Route exact path='/about' element={<About mode={mode}/>}/>
-        </Routes>
+        <TextForm heading="TextAnalyzer" showAlert={showAlert} mode={mode}/>
+        {/* <Routes> */}
+          {/* <Route exact path='/' element={<TextForm heading="TextAnalyzer" showAlert={showAlert} mode={mode}/>}/>  */}
+          {/* <Route exact path='/about' element={<About mode={mode}/>}/> */}
+        {/* </Routes> */}
       </div>
     </>
   );
