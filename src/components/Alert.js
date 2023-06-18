@@ -1,17 +1,16 @@
 import React from 'react'
 
+//{/* props.alert will check if null, if yes then alert will not be shown as overall expression is false */}
 function Alert(props) {
 
     const capitalize=(word)=>{
         const lower = word.toLowerCase();
         return lower.charAt(0).toUpperCase()+lower.slice(1);
     }
-
-    {/* props.alert will check if null, if yes then alert will not be shown as overall expression is false */}
   return (
-        props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-            <strong>{capitalize(props.alert.type)}</strong>: {props.alert.message}
-            {/* <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> */}
+        <div style={{height: '50px'}}>
+            {props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+                <strong>{capitalize(props.alert.type)}</strong>: {props.alert.message}</div>}
         </div>
   )
 }
